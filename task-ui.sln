@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29920.165
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "task-ui", "task-ui.csproj", "{6888815B-04E7-465C-897E-C826C37AE23B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "task-ui", "task-ui.csproj", "{6888815B-04E7-465C-897E-C826C37AE23B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

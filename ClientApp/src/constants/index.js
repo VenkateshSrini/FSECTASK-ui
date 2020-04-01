@@ -1,0 +1,1 @@
+﻿export const TASK_SERVICE_URL = "http://localHost:5500/api/task";
