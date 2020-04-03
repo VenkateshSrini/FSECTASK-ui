@@ -18,7 +18,8 @@ export default class App extends Component {
       //  <Route path='/fetch-data' component={FetchData} />
         //</Layout>
         <Fragment>
-            <AppHeader/>
+            <AppHeader />
+            <Home/>
         </Fragment>
       
     );
