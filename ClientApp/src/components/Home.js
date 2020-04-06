@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Col, Container, Row } from 'reactstrap';
+import { Col, Container, Row,Table, Button } from 'reactstrap';
 import DataTable from './DataTable'
-import TakFormModal from './TaskFormModal';
+import TaskFormModel from './TaskFormModal';
 import { TASK_SERVICE_URL } from '../constants';
 export class Home extends Component {
   static displayName = Home.name;
@@ -12,8 +12,15 @@ export class Home extends Component {
         this.getTasks();
     }
     getTasks = () => {
-        fetch('${TASK_SERVICE_URL}/api/Task/GetAllTasks')
-            .then(res => res.json)
+      
+        fetch(`${TASK_SERVICE_URL}/GetAllTasks`)
+            .then(res => {
+                console.log("******************");
+                console.log(res.status);
+                //console.log(res.json());
+                console.log("******************");
+                return res.json();
+            })
             .then(res => this.setState({ items: res }))
             .catch(err => console.log(err));
     }
@@ -52,7 +59,7 @@ export class Home extends Component {
           </Row>
           <Row>
               <Col>
-                  <TaskFormModel isNew={false} tasks={true}
+                  <TaskFormModel isNew={true} tasks={true}
                       addTaskToState={this.props.updateState} />
               </Col>
           </Row>

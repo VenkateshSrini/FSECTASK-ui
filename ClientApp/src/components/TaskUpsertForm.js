@@ -1,5 +1,5 @@
 ﻿import React, { Component } from 'react'
-import { Button, Form, FromGroup, Input, Label } from 'reactstrap';
+import { Button, Form, FormGroup, Input, Label } from 'reactstrap';
 import ReactBootstrapSlider from 'react-bootstrap-slider';
 import { TASK_SERVICE_URL } from '../constants';
 class TaskUpsertForm extends Component {
