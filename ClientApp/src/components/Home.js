@@ -36,9 +36,10 @@ export class Home extends Component {
             .catch(err => console.log(err));
     }
     addTaskToState = tasks => {
-        this.setState(previous => ({
-            items: [...previous, tasks]
-        }));
+        // this.setState(previous => ({
+        //     items: [...previous, tasks]
+        // }));
+        this.getTasks();
     }
     updateState = (id) => {
         this.getTasks();
@@ -115,7 +116,7 @@ export class Home extends Component {
                             
                         </FormGroup>
                         <Button style={{
-                            position: 'fixed', left: '48%', top: '35%', alignSelf: 'center'
+                            position: 'relative', left: '48%', top: '35%', alignSelf: 'center'
                         }} >Search</Button>
                     </Form>
                 </Col>
@@ -134,8 +135,8 @@ export class Home extends Component {
             </Row>
             <Row>
                 <Col>
-                    <TaskFormModel isNew={true} tasks={true}
-                        addTaskToState={this.props.updateState} />
+                    <TaskFormModel isNew={true} 
+                        addTaskToState={this.addTaskToState} />
                 </Col>
             </Row>
         </Container>

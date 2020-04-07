@@ -31,8 +31,8 @@ class TaskFormModel extends Component {
                 <ModalHeader toggle={this.toggle}>{title}</ModalHeader>
                 <ModalBody>
                     <TaskForm
-                        addTaskToState={this.props.addUserToState}
-                        updateTaskIntoState={this.props.updateUserIntoState}
+                        addTaskToState={this.props.addTaskToState}
+                        updateTaskIntoState={this.props.updateTaskIntoState}
                         toggle={this.toggle}
                         tasks={this.props.tasks} />
                 </ModalBody>

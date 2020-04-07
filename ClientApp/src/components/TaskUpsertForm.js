@@ -39,10 +39,17 @@ class TaskUpsertForm extends Component {
 
             })
         })
-            .then(res => res.json())
+            .then(response => {
+                console.log("*****Get Any criteria*******");
+                console.log(response.status);
+                //console.log(res.json());
+                console.log("******Get Any criteria******");
+                return response.json();
+            })
             .then(tasks => {
-                this.props.addTaskToState(tasks);
                 this.props.toggle();
+                this.props.addTaskToState(tasks);
+              
             })
             .catch(err => console.log(err));
     }
