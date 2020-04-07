@@ -1,6 +1,7 @@
 ﻿import React, { Component } from 'react'
 import { Button, Form, FormGroup, Input, Label } from 'reactstrap';
 import ReactBootstrapSlider from 'react-bootstrap-slider';
+import BootstrapSlider from 'bootstrap-slider/dist/css/bootstrap-slider.min.css';
 import { TASK_SERVICE_URL } from '../constants';
 class TaskUpsertForm extends Component {
     state = {
@@ -70,15 +71,16 @@ class TaskUpsertForm extends Component {
     sliderChange = e => {
         // console.log("changeValue triggered");
         this.setState({ priority: e.target.value });
+        
     };
     render() {
         return <Form onSubmit={this.props.tasks ? this.submitEdit : this.submitNew}>
             <FormGroup>
-                <Label for="name">Task Details:</Label>
-                <Input type="text" name="TaskDet" onChange={this.onChange} value={this.state.taskDescription === '' ? '' : this.state.taskDescription} />
+                <Label for="taskDescription">Task Details:</Label>
+                <Input type="text" name="taskDescription" onChange={this.onChange} value={this.state.taskDescription === '' ? '' : this.state.taskDescription} />
             </FormGroup>
             <FormGroup>
-                <Label for="document">Priority:</Label>
+                <Label for="Priority">Priority:</Label>
                 
                 <ReactBootstrapSlider
                     value={this.state.priority}
@@ -92,17 +94,17 @@ class TaskUpsertForm extends Component {
                      />
             </FormGroup>
             <FormGroup>
-                <Label for="email">Parent Tak:</Label>
-                <Input type="email" name="parentTask" onChange={this.onChange} value={this.state.parentTaskId === 0 ? 0 : this.state.parentTaskId} />
+                <Label for="parentTaskId">Parent Tak:</Label>
+                <Input type="text" name="parentTaskId" onChange={this.onChange} value={this.state.parentTaskId === 0 ? 0 : this.state.parentTaskId} />
             </FormGroup>
             <FormGroup>
-                <Label for="phone">Start Date:</Label>
+                <Label for="startDate">Start Date:</Label>
                 <Input type="text" name="startDate" onChange={this.onChange} value={this.state.startDate === null ? '' : this.state.startDate}
                  />
 
             </FormGroup>
             <FormGroup>
-                <Label for="phone">End Date:</Label>
+                <Label for="endDate">End Date:</Label>
                 <Input type="text" name="endDate" onChange={this.onChange} value={this.state.endDate === null ? '' : this.state.endDate}
                 />
 

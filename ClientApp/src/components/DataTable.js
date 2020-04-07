@@ -33,7 +33,7 @@ class DataTable extends Component {
             </thead>
             <tbody>
                 {((!items) || (items.length <= 0)) ?
-                    <tr><td colSpan="8" align="center"><b>No Users yet</b></td></tr>
+                    <tr><td colSpan="8" align="center"><b>No Tasks yet</b></td></tr>
                     : items.map(item => (
                         <tr key={item.taskId}>
                             <th scope="row">
