@@ -69,7 +69,11 @@ class TaskUpsertForm extends Component {
                 endDate: this.state.endDate
             })
         })
-            .then(() => {
+            .then(response => {
+                console.log("*****Get Any criteria*******");
+                console.log(response.status);
+                console.log(response.json());
+                console.log("******Get Any criteria******");
                 this.props.toggle();
                 this.props.updateTaskIntoState(this.state.id);
             })
@@ -97,7 +101,7 @@ class TaskUpsertForm extends Component {
                     max={30}
                     min={0}
                     orientation="horizontal"
-                    reversed={true}
+                    reversed={false}
                      />
             </FormGroup>
             <FormGroup>

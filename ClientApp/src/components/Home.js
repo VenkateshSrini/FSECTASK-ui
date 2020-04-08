@@ -45,7 +45,7 @@ export class Home extends Component {
         this.getTasks();
     }
     deleteItemFromState = id => {
-        const updated = this.state.items.filter(item => item.id !== id);
+        const updated = this.state.items.filter(item => item.taskId !== id);
         this.setState({ items: updated })
     }
     searchAynyTask = e => {

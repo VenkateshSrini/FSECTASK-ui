@@ -7,10 +7,14 @@ class DataTable extends Component {
         let confirmClose = window.confirm("Are you sure you want to close the task");
         if (confirmClose) {
             fetch(`${TASK_SERVICE_URL}/EndTask?taskID=${id}`, {
-                method: 'put',
+                method: 'put'
                 
             })
                 .then(res => {
+                    console.log("******************");
+                    console.log(res.status);
+                //console.log(res.json());
+                    console.log("******************");
                     this.props.deleteItemFromState(id);
                 })
                 .catch(err => console.log(err));
@@ -59,6 +63,7 @@ class DataTable extends Component {
                             </td>
                             <td align="center">
                                 <div>
+                                    
                                     <TaskFormModel isNew={false} tasks={item}
                                         updateTaskIntoState={this.props.updateState} />
                                          &nbsp;&nbsp;&nbsp;
