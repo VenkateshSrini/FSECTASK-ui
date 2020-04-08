@@ -63,11 +63,13 @@ class DataTable extends Component {
                             </td>
                             <td align="center">
                                 <div>
-                                    
+                                   
                                     <TaskFormModel isNew={false} tasks={item}
                                         updateTaskIntoState={this.props.updateState} />
                                          &nbsp;&nbsp;&nbsp;
-                                    <Button color="danger" onClick={() => this.endTask(item.taskId)}>End Task</Button>
+                                    <Button color="danger" onClick={() => this.endTask(item.taskId)}
+                                        disabled={item.status<0}
+                                    >End Task</Button>
                                 </div>
                             </td>
                         </tr>

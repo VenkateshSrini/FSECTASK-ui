@@ -21,9 +21,10 @@ class TaskFormModel extends Component {
                 onClick={this.toggle}
                 style={{ minWidth: "200px" }}>Add Task</Button>;
         } else {
+                
             button = <Button
                 color="warning"
-                onClick={this.toggle}>Edit Task</Button>;
+                onClick={this.toggle} disabled={this.props.tasks.status<0}>Edit Task</Button>;
         }
         return <Fragment>
             {button}
